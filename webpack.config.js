@@ -36,20 +36,19 @@ module.exports = {
           plugins: ['transform-class-properties', 'transform-decorators-legacy']
         }
       },
-      { test: /\.css$/i, 
-        use: [
-          'style-loader', 
-          'css-loader'
-        ] 
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       },
       {
         test: /\.scss$/,
-        include: /src/,
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          //resolve-url-loader may be chained before sass-loader if necessary
-          use: [{loader: 'css-loader', loader: 'sass-loader' }]
+          use: ['css-loader', 'sass-loader']
         })
       },
       { test: /\.html$/i, 
