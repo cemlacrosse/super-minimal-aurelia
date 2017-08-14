@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //const BabiliPlugin = require('babili-webpack-plugin'); // ES6 compatible minfication/compresion
 
 module.exports = {
+
   entry: {
     main: [ 
       './ie-polyfill',
@@ -43,10 +44,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        include: /src/,
+        exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           //resolve-url-loader may be chained before sass-loader if necessary
-          use: ['css-loader', 'sass-loader']
+          use: [{loader: 'css-loader', loader: 'sass-loader' }]
         })
       },
       { test: /\.html$/i, 

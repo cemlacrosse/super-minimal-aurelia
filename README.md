@@ -5,7 +5,7 @@ This boilerplate is up to date as of April 13th, 2017, and incorporates the foll
 
 * An ES6-based Aurelia implementation (rather than Typescript)
 * Code-splitting by routes (using latest syntax in Aurelia's router to designate chunk creation according to files under a route)
-* Use of plain CSS (rather than SASS/LESS)
+* Use of SASS
 * Fully working in all evergreen browsers AND Internet Explorer 11, 10, and 9!
 
 Here's all you need to get started. 
