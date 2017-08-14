@@ -1,6 +1,7 @@
 {
   "license": "MIT",
   "devDependencies": {
+    "aurelia-tools": "^1.0.0",
     "aurelia-webpack-plugin": "2.0.0-rc.3",
     "babel-core": "^6.23.1",
     "babel-loader": "7.1.1",
