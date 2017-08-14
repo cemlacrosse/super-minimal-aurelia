@@ -12,6 +12,7 @@
     "babili-webpack-plugin": "^0.0.11",
     "core-js": "^2.4.1",
     "css-loader": "^0.28.0",
+    "eslint": "^4.4.1",
     "extract-text-webpack-plugin": "3.0.0",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "2.30.1",
