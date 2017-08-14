@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //const BabiliPlugin = require('babili-webpack-plugin'); // ES6 compatible minfication/compresion
 
 module.exports = {
@@ -40,6 +41,14 @@ module.exports = {
           'css-loader'
         ] 
       },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          //resolve-url-loader may be chained before sass-loader if necessary
+          use: ['css-loader', 'sass-loader']
+        })
+      },
       { test: /\.html$/i, 
         use: 'html-loader' }
     ]
@@ -58,11 +67,12 @@ module.exports = {
     // init aurelia-webpack-plugin
     new AureliaWebpackPlugin.AureliaPlugin(),
     
+    new ExtractTextPlugin({filename: "styles.css", disable: false, allChunks: true}),
+
     // have Webpack copy over the index.html and inject appropriate script tag for Webpack-bundled entry point 'main.js'
     new HtmlWebpackPlugin({
         template: '!html-webpack-plugin/lib/loader!index.html',
         filename: 'index.html'
     })
-
   ]
 };
