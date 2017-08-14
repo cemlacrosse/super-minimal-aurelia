@@ -1,7 +1,7 @@
 # super-minimal-aurelia
-A barebones Aurelia + webpack2 build with decorators and async/await support
+A barebones Aurelia + webpack3 build with decorators and async/await support
 
-This boilerplate is up to date as of April 13th, 2017, and incorporates the following:
+This boilerplate is up to date as of August 14th, 2017, and incorporates the following:
 
 * An ES6-based Aurelia implementation (rather than Typescript)
 * Code-splitting by routes (using latest syntax in Aurelia's router to designate chunk creation according to files under a route)
